@@ -26,7 +26,7 @@ public class Livro implements Serializable{
 	private String texto;
 
 	@ManyToOne /*Muitos livros para uma categoria */
-	@JoinColumn(name = "categoria_id")
+	@JoinColumn(name = "categoria_id") //informa que a classe é o lado forte do relacionamento
 	private Categoria categoria;
 
 	public Livro() {
