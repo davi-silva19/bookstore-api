@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.ManyToAny;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Livro implements Serializable{
 	/**
@@ -25,6 +27,7 @@ public class Livro implements Serializable{
 	private String nome_autor;
 	private String texto;
 
+	@JsonIgnore
 	@ManyToOne /*Muitos livros para uma categoria */
 	@JoinColumn(name = "categoria_id") //informa que a classe é o lado forte do relacionamento
 	private Categoria categoria;
